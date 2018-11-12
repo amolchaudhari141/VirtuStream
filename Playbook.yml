@@ -18,6 +18,7 @@
   npm:
     name: coffee-script
     global: yes
-	
+  - name: Clone the repo
+    git: repo=https://github.com/amolchaudhari141/VirtuStream.git dest=/Proj/Fibbonaci	
   
  
