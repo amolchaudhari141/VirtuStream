@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: Install Java 7
+    action: apt pkg=oracle-java7-installer state=latest install_recommends=yes
+  - name: install apache2
+      apt: name=apache2 update_cache=yes state=latest
+  - name: Install software
+    apt:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - git
+      - npm
+  - name: Install "coffee-script" node.js package globally.
+  npm:
+    name: coffee-script
+    global: yes
+	
+  
+ 
